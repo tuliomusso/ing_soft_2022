@@ -20,7 +20,7 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
             document.getElementById('nombreProvincia').value = '';
             document.getElementById('telefono').value = '';
             document.getElementById('dni').value = '';
-            alert('El usuario se insertó correctamente.');
+            alert('El usuario se registro correctamente.');
         } else {
             console.log(data);
         }
