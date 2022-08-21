@@ -9,42 +9,7 @@
 <script src="https://kit.fontawesome.com/a7606874aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid bg-dark">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-success">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">ServiEmpresa</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarColor02">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="index.html">
-                                    Principal
-                                    <span class="visually-hidden">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Notificaciones</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cuenta</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Perfil</a>
-                                    <a class="dropdown-item" href="#">Servicios Contratados</a>
-                                    <a class="dropdown-item" href="#">Servicios Ofrecidos</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html" title="login">Iniciar Sesion</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+<?php include 'NAV-FOOTER/navbar.php';?>
     <br>
     <div class="container">
         <div class="d-grid gap-2">
@@ -120,63 +85,8 @@
             </div>
         </div>
     </div>
-        <!-- FOOTER -->
-        <!-- FOOTER -->
-        <div class="container my-5">
-
-            <footer class="text-white text-center text-lg-start bg-dark">
-                <!-- Grid container -->
-                <div class="container p-4">
-                    <!--Grid row-->
-                    <div class="row mt-4">
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-4">Sobre Nosotros</h5>
-
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti.
-                            </p>
-
-                            <p>
-                                Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias.
-                            </p>
-
-
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-4">Contacto</h5>
-
-                            <table class="table text-center text-white">
-                                <tbody class="fw-normal">
-                                    <tr>
-                                        <td>Telefono:</td>
-                                        <td>xxxxxxxxxxx</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Direccion:</td>
-                                        <td>Direccion 123</td>
-                                    </tr>
-                                    <tr>
-                                        <td>E-mail:</td>
-                                        <td>contact@example.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                </div>
-            </footer>
-
-        </div>
-        <!-- FIN FOOTER -->
+<!-- FOOTER -->
+<?php include 'NAV-FOOTER/footer.php';?>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
