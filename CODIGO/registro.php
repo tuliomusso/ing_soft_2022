@@ -1,65 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="bootstrap.min.css">
-<script src="https://kit.fontawesome.com/a7606874aa.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<?php include 'NAV-FOOTER/navbar.php';?>
-    <form id="formulario" method="POST">
-        <div class="container-fluid bg-dark">
-            <div class="container">
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required><p>
-                    <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" required><p>
-                  </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nombre y Apellido</label>
-                      <input type="nombre" class="form-control" id="nombreApellido" name="nombreApellido" required><p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="example" class="form-label">Domicilio</label>
-                        <input type="nombre" class="form-control" id="domicilio" name="domicilio" required><p>
-                      </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Localidad</label>
-                        <input type="nombre" class="form-control" id="nombreLocalidad" name="nombreLocalidad" required><p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Codigo Postal</label>
-                        <input type="nombre" class="form-control" id="codigoPostal" name="codigoPostal" required><p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Provincia</label>
-                        <input type="nombre" class="form-control" id="nombreProvincia" name="nombreProvincia" required><p>
-                      </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Telefono</label>
-                        <input type="nombre" class="form-control" id="telefono" name="telefono" required><p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">DNI</label>
-                        <input type="nombre" class="form-control" id="dni" name="dni" required><p>
-                    </div>
-                    <button type="submit" class="btn btn-success">REGISTRARSE</button>
-                  </form>
-            </div>
-    </div>
-    </form>
-    <!-- FOOTER -->
-    <?php include 'NAV-FOOTER/footer.php';?>
-  <script src="app.js"></script>
- <!-- JavaScript Bundle with Popper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
+$nombreApellido = isset($_POST['nombreApellido']) ? $_POST['nombreApellido'] : '';
+$domicilio = isset($_POST['domicilio']) ? $_POST['domicilio'] : '';
+$nombreLocalidad = isset($_POST['nombreLocalidad']) ? $_POST['nombreLocalidad'] : '';
+$codigoPostal = isset($_POST['codigoPostal']) ? $_POST['codigoPostal'] : '';
+$nombreProvincia = isset($_POST['nombreProvincia']) ? $_POST['nombreProvincia'] : '';
+$telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
+$dni = isset($_POST['dni']) ? $_POST['dni'] : '';
+
+try {
+
+    $conexion = new PDO("mysql:host=localhost;port=3306;dbname=serviempresa", "root", "");
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+    $pdo = $conexion->prepare('INSERT INTO usuario(email, password, nombreApellido, domicilio, nombreLocalidad, codigoPostal, nombreProvincia, telefono, dni) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $pdo->bindParam(1, $email);
+    $pdo->bindParam(2, $password);
+    $pdo->bindParam(3, $nombreApellido);
+    $pdo->bindParam(4, $domicilio);
+    $pdo->bindParam(5, $nombreLocalidad);
+    $pdo->bindParam(6, $codigoPostal);
+    $pdo->bindParam(7, $nombreProvincia);
+    $pdo->bindParam(8, $telefono);
+    $pdo->bindParam(9, $dni);
+    $pdo->execute() or die(print($pdo->errorInfo()));
+
+    echo json_encode('true');
+
+} catch(PDOException $error) {
+    echo $error->getMessage();
+    die();
+}
+?>

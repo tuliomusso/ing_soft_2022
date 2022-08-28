@@ -62,7 +62,7 @@
       
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="submit" class="btn btn-success">INICIAR SESION</button>
-                  <p class="small fw-bold mt-2 pt-1 mb-0">No tiene una cuenta? <a href="registro.php"
+                  <p class="small fw-bold mt-2 pt-1 mb-0">No tiene una cuenta? <a href="formularioRegistro.php"
                       class="link-light">Registrese</a></p>
                 </div>
       

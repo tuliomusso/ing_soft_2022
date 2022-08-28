@@ -13,7 +13,7 @@
     <br>
     <div class="container">
         <div class="d-grid gap-2">
-            <button type="button" href="serviciosDisponibles.html" class="btn btn-success btn-lg btn-block">SERVICIOS DISPONIBLES</button>
+            <button type="button" href="serviciosDisponibles.html" class="btn btn-info btn-lg btn-block">SERVICIOS DISPONIBLES</button>
         </div>
     </div>
     <br>

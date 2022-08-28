@@ -42,7 +42,7 @@
     <div class="container">
         <div class="d-grid gap-2">
             <a type="button" href="serviciosDisponibles.php" class="btn btn-success btn-lg btn-block">SOLICITAR SERVICIOS</a button>
-            <a type="button" href="ofrecerServicios.php" class="btn btn-success btn-lg btn-block">OFRECER SERVICIOS</a button>
+            <a type="button" href="formularioServicio.php" class="btn btn-success btn-lg btn-block">OFRECER SERVICIOS</a button>
         </div>
     </div>
         <!-- FOOTER -->
