@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/a7606874aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <!-- NAVBAR -->
+         <!-- NAVBAR -->
   <?php include 'NAV-FOOTER/navbar.php';
   ?>
   <form action= "serviciosFiltrados.php" method="POST">
@@ -29,6 +29,10 @@
                   </select>
     <button type="submit">FILTRAR</button>
   </form>
+  <?php
+    $filtroCategoria= $_POST['filtroCategoria'];
+  ?>
+  </form>
   <div class="container">
         <div class="container">
             <div class="row mt-5">
@@ -38,6 +42,8 @@
                     $cantidadFilas = mysqli_num_rows($result);
                     for($fila=0;$fila<$cantidadFilas;$fila++){
                     $valores = mysqli_fetch_assoc($result);
+                    if($valores["idCategoria"]==$filtroCategoria){
+                    
               ?>
                 <div class="col-3">
                     <div class="card" style="width: 17rem;">
@@ -56,11 +62,12 @@
                 </div>
               <?php
                     }
+                    }
               ?>
             </div>
         </div>
     </div>
-     <!-- FOOTER -->
+         <!-- FOOTER -->
   <?php include 'NAV-FOOTER/footer.php';?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

@@ -51,7 +51,7 @@
                     <input type="text" class="form-control" id="cantidadReservas" name="cantidadReservas" required><p>
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Describa sus medios de contacto</label>
+                    <label for="exampleFormControlTextarea1">Describa su servicio y medios de contacto</label>
                     <textarea class="form-control" id="descripcionContacto" name="descripcionContacto" rows="5"></textarea required><p>
                  </div>
                     <button type="submit" class="btn btn-success">CONFIRMAR</button>
