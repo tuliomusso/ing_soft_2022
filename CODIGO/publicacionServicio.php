@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+  $mysqli = new mysqli('localhost', 'root', '', 'serviempresa');
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +15,15 @@
          <!-- NAVBAR -->
   <?php include 'NAV-FOOTER/navbar.php';
   ?>
+  <?php
+$categoria = $_GET['categoria'];
+$nombre = $_GET['nombre'];
+$descripcion = $_GET['descripcion'];
+$oferente=$_GET['oferente'];
+$imagen=$_GET['imagen'];
+?> 
+
+<p>Folio: <b><?php echo $imagen; ?></b></p> 
   <div class="container mt-5 mb-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10">
@@ -19,15 +31,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="https://i.imgur.com/Dhebu4F.jpg" width="250" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="<?php echo $imagen; ?>" width="300" height="300" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="product p-4">
-                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">CATEGORIA(BD)</span>
-                                <h5 class="text-uppercase">NOMBRE SERVICIO</h5>
+                            <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">CATEGORIA: <?php echo $categoria?></span>
+                                <h5 class="text-uppercase"><?php echo $nombre?></h5>
+                                <h8 class="text">OFRECIDO POR: <u><?php echo $oferente?></u></h8 >
                             </div>
-                            <p class="about">DESCRIPCION DEL SERVICIO Y MEDIOS DE CONTACTO</p>
+                            <p class="about">DESCRIPCION: <?php echo $descripcion?></p>
                             <a type="button" href="" class="btn btn-success">CONFIRMAR SERVICIO</a button>
                         </div>
                     </div>

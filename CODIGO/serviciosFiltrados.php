@@ -42,12 +42,13 @@
                     $cantidadFilas = mysqli_num_rows($result);
                     for($fila=0;$fila<$cantidadFilas;$fila++){
                     $valores = mysqli_fetch_assoc($result);
+                    $img_src= $valores['imagen'];
                     if($valores["idCategoria"]==$filtroCategoria){
                     
               ?>
                 <div class="col-3">
                     <div class="card" style="width: 17rem;">
-                    <img src="data:image/png;base64,<?php echo base64_encode($valores['imagen'])?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo $img_src; ?>" width="230" height="230" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title">
                             <?php
@@ -55,8 +56,23 @@
                                   echo $valores["nombre"];
                             ?>
                           </h5>
-
-                          <a href="publicacionServicio.php" class="btn btn-success"><i class="fas fa-link"></i> VER SERVICIO</a>
+                          <?php
+                          $arrayCategoria = array($valores["idCategoria"]);  
+                          $categoriaServicio = implode(" ",$arrayCategoria);
+                          $arrayNombre = array($valores["nombre"]);  
+                          $nombreServicio = implode(" ",$arrayNombre);
+                          $arrayDescripcion = array($valores["descripcionContacto"]);  
+                          $descripcionServicio = implode(" ",$arrayDescripcion);
+                          $arrayOferente = array($valores["idUsuario"]);  
+                          $oferenteServicio = implode(" ",$arrayOferente);
+                          $arrayimagen = array($valores["imagen"]);  
+                          $imagen = implode(" ",$arrayimagen);
+                          ?>
+                          <a href="publicacionServicio.php?categoria=<?php echo $categoriaServicio;?>
+                          &nombre=<?php echo $nombreServicio;?>
+                          &descripcion=<?php echo $descripcionServicio;?>
+                          &oferente=<?php echo $oferenteServicio;?>
+                          &imagen=<?php echo $imagen;?>" class="btn btn-success"><i class="fas fa-link"></i> VER SERVICIO</a>
                         </div>
                       </div>
                 </div>

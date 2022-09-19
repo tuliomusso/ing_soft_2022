@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="container my-5">
-    <form id="formularioServicio" method="POST">
+    <form id="formularioServicio" method="POST" enctype="multipart/form-data">
         <div class="container-fluid bg-dark">
             <div class="container">
                 <form>
