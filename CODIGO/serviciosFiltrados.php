@@ -15,6 +15,7 @@
          <!-- NAVBAR -->
   <?php include 'NAV-FOOTER/navbar.php';
   ?>
+  <br>
   <form action= "serviciosFiltrados.php" method="POST">
   <label for="idCategoria">Categoría</label>
    <select name="filtroCategoria" id="filtroCategoria">
@@ -27,6 +28,19 @@
                   }
                   ?>
                   </select>
+                  <label>Provincias</label>
+    <select id="selectProvincias">
+      <option value="Elige una provincia">Elige una provincia</option>
+    </select>
+    <label>Departamentos</label>
+    <select id="selectDepartamentos">
+      <option value="Elige un departamento">Elige un departamento </option>
+    </select>
+    <span></span>
+       <label>Localidades</label>
+    <select id="selectLocalidades">
+      <option value="Elige una localidad">Elige una localidad</option>
+    </select>
     <button type="submit">FILTRAR</button>
   </form>
   <?php
@@ -85,6 +99,7 @@
     </div>
          <!-- FOOTER -->
   <?php include 'NAV-FOOTER/footer.php';?>
+  <script src="scriptFiltro.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
