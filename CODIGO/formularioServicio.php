@@ -26,7 +26,7 @@
             <div class="container">
                 <form>
                   <label for="idCategoria">Categoría</label>
-                  <select name="idCategoria" id="idCategoria">
+                  <select name="idCategoria" id="idCategoria" required>
                   <option value="0">Selecciona:</option>
                   <?php
                   //consulta de categorias
@@ -61,9 +61,19 @@
     </div>
     </form>
     </div>
+    <script src="ofrecerServicios.js"></script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    let formulario = document.getElementById('formularioServicio');
+    formulario.addEventListener('submit', function() {
+      formulario.reset();
+      alert('El servicio se registro correctamente.');
+    });
+  });
+</script>
       <!-- FOOTER -->
       <?php include 'NAV-FOOTER/footer.php';?>
-      <script src="ofrecerServicios.js"></script>
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

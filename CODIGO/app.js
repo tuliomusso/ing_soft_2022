@@ -1,5 +1,5 @@
 document.getElementById('formulario').addEventListener('submit', function(e) {
-    
+
     e.preventDefault();
 
     let formulario = new FormData(document.getElementById('formulario'));
@@ -15,12 +15,12 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
             document.getElementById('password').value = '';
             document.getElementById('nombreApellido').value = '';
             document.getElementById('domicilio').value = '';
-            document.getElementById('nombreLocalidad').value = '';
-            document.getElementById('codigoPostal').value = '';
-            document.getElementById('nombreProvincia').value = '';
+            document.getElementById('selectProvincias').value = '';
+            document.getElementById('selectDepartamentos').value = '';
+            document.getElementById('selectLocalidades').value = '';
             document.getElementById('telefono').value = '';
             document.getElementById('dni').value = '';
-            alert('El usuario se registro correctamente.');
+            alert('El usuario se insertó correctamente.');
         } else {
             console.log(data);
         }

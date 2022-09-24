@@ -29,22 +29,26 @@
                   ?>
                   </select>
                   <label>Provincias</label>
-    <select id="selectProvincias">
+    <select name="selectProvincias" id="selectProvincias">
       <option value="Elige una provincia">Elige una provincia</option>
     </select>
     <label>Departamentos</label>
-    <select id="selectDepartamentos">
+    <select name="selectDepartamentos"id="selectDepartamentos">
       <option value="Elige un departamento">Elige un departamento </option>
     </select>
     <span></span>
        <label>Localidades</label>
-    <select id="selectLocalidades">
+    <select name="selectLocalidades"id="selectLocalidades">
       <option value="Elige una localidad">Elige una localidad</option>
     </select>
     <button type="submit">FILTRAR</button>
   </form>
   <?php
     $filtroCategoria= $_POST['filtroCategoria'];
+    $filtroProvincia= $_POST['selectProvincias'];
+    $filtroDepartamento= $_POST['selectDepartamentos'];
+    $filtroLocalidad= $_POST['selectLocalidades'];
+    echo $filtroDepartamento;
   ?>
   </form>
   <div class="container">
@@ -57,7 +61,7 @@
                     for($fila=0;$fila<$cantidadFilas;$fila++){
                     $valores = mysqli_fetch_assoc($result);
                     $img_src= $valores['imagen'];
-                    if($valores["idCategoria"]==$filtroCategoria){
+                    if($valores["idCategoria"]==$filtroCategoria && $valores["provinciaOferente"]==$filtroProvincia && $valores["departamentoOferente"]==$filtroDepartamento && $valores["localidadOferente"]==$filtroLocalidad){
                     
               ?>
                 <div class="col-3">

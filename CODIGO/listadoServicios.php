@@ -29,16 +29,16 @@
                   ?>
       </select>
       <label>Provincias</label>
-    <select id="selectProvincias">
+    <select name="selectProvincias" id="selectProvincias">
       <option value="Elige una provincia">Elige una provincia</option>
     </select>
     <label>Departamentos</label>
-    <select id="selectDepartamentos">
+    <select name="selectDepartamentos" id="selectDepartamentos">
       <option value="Elige un departamento">Elige un departamento </option>
     </select>
     <span></span>
        <label>Localidades</label>
-    <select id="selectLocalidades">
+    <select name="selectLocalidades" id="selectLocalidades">
       <option value="Elige una localidad">Elige una localidad</option>
     </select>
     <button type="submit">FILTRAR</button>

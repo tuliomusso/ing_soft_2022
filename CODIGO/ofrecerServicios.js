@@ -17,6 +17,9 @@ document.getElementById('formularioServicio').addEventListener('submit', functio
             document.getElementById('imagen').value = '';
             document.getElementById('cantidadReservas').value = '';
             document.getElementById('descripcionContacto').value = '';
+            document.getElementById('provinciaOferente').value = '';
+            document.getElementById('departamentoOferente').value = '';
+            document.getElementById('localidadOferente').value = '';
             alert('El servicio se registro correctamente.');
         } else {
             console.log(data);
