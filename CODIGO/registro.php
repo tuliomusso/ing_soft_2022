@@ -27,7 +27,12 @@ try {
     $pdo->bindParam(9, $dni);
     $pdo->execute() or die(print($pdo->errorInfo()));
 
-    echo json_encode('true');
+   
+    $mensaje = "USUARIO REGISTRADO EXITOSAMENTE";
+    echo "<script>";
+    echo "if(confirm('$mensaje'));";  
+    echo "window.location = 'http://localhost/DESARROLLO%20TPI/CODIGO/login.php';";
+    echo "</script>"; 
 
 } catch(PDOException $error) {
     echo $error->getMessage();

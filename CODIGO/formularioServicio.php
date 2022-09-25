@@ -67,7 +67,7 @@
     let formulario = document.getElementById('formularioServicio');
     formulario.addEventListener('submit', function() {
       formulario.reset();
-      alert('El servicio se registro correctamente.');
+      alert('SERVICIO REGISTRADO EXITOSAMENTE');
     });
   });
 </script>

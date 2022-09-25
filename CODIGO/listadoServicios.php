@@ -17,9 +17,9 @@
   ?>
   <br>
   <form action= "serviciosFiltrados.php" method="POST">
-  <label for="idCategoria">Categoría</label>
-   <select name="filtroCategoria" id="filtroCategoria">
-                  <option value="0">Selecciona:</option>
+  <label for="idCategoria">Categorías</label>
+   <select name="filtroCategoria" id="filtroCategoria" required>
+                  <option value="">Selecciona:</option>
                   <?php
                   //consulta de categorias
                   $query = $mysqli -> query ("SELECT * FROM categoria");
@@ -28,18 +28,19 @@
                   }
                   ?>
       </select>
+      <br>
       <label>Provincias</label>
-    <select name="selectProvincias" id="selectProvincias">
-      <option value="Elige una provincia">Elige una provincia</option>
+    <select name="selectProvincias" id="selectProvincias" required>
+      <option value="">Elige una provincia</option>
     </select>
     <label>Departamentos</label>
-    <select name="selectDepartamentos" id="selectDepartamentos">
-      <option value="Elige un departamento">Elige un departamento </option>
+    <select name="selectDepartamentos" id="selectDepartamentos" required>
+      <option value="">Elige un departamento </option>
     </select>
     <span></span>
        <label>Localidades</label>
-    <select name="selectLocalidades" id="selectLocalidades">
-      <option value="Elige una localidad">Elige una localidad</option>
+    <select name="selectLocalidades" id="selectLocalidades" required>
+      <option value="">Elige una localidad</option>
     </select>
     <button type="submit">FILTRAR</button>
   </form>
