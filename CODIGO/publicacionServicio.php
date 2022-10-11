@@ -12,18 +12,21 @@
     <script src="https://kit.fontawesome.com/a7606874aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
-         <!-- NAVBAR -->
-  <?php include 'NAV-FOOTER/navbar.php';
-  ?>
-  <?php
+      <?php
 $categoria = $_GET['categoria'];
 $nombre = $_GET['nombre'];
 $descripcion = $_GET['descripcion'];
 $oferente=$_GET['oferente'];
 $imagen=$_GET['imagen'];
+$idServicio=$_GET['idServicio'];
 ?> 
 
-<p>Folio: <b><?php echo $imagen; ?></b></p> 
+         <!-- NAVBAR -->
+  <?php include 'NAV-FOOTER/navbar.php';
+  ?>
+
+
+
   <div class="container mt-5 mb-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-10">
@@ -31,7 +34,7 @@ $imagen=$_GET['imagen'];
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="<?php echo $imagen; ?>" width="300" height="300" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="<?php echo $imagen; ?>" width="300" height="300" alt="imagen error" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -41,7 +44,34 @@ $imagen=$_GET['imagen'];
                                 <h8 class="text">OFRECIDO POR: <u><?php echo $oferente?></u></h8 >
                             </div>
                             <p class="about">DESCRIPCION: <?php echo $descripcion?></p>
-                            <a type="button" href="" class="btn btn-success">CONFIRMAR SERVICIO</a button>
+                            <form method="POST">
+                            <input type="submit" class="btn btn-success" name="btn-atc" value="CONFIRMAR SERVICIO">
+                            </form>
+                            
+                            <?php
+                            if(isset($_POST['btn-atc'])){
+                                
+                                $mysqli = new mysqli('localhost', 'root', '', 'serviempresa');
+                                $sql = "SELECT * FROM servicio";        
+                                $result = mysqli_query($mysqli, $sql);
+                                $cantidadFilas = mysqli_num_rows($result);
+                                for($fila=0;$fila<$cantidadFilas;$fila++){
+                                $valores = mysqli_fetch_assoc($result);
+                                if($valores["idServicio"]==$idServicio){
+                                    $calculoReservas=$valores["cantidadReservas"]-1;
+                                    $sSQL=mysqli_query($mysqli,"UPDATE servicio SET cantidadReservas='$calculoReservas' WHERE idServicio='$idServicio'");
+                                    $username=$_SESSION['username'];
+                                    $servicioNombre=$valores["nombre"];
+                                    $oferenteId=$valores["idUsuario"];
+                                    $contactoOferente=$valores["descripcionContacto"];
+                                    $sSQLL=mysqli_query($mysqli,"INSERT INTO reserva (idUsuario, nombreServicio, idOferente, contactoOferente) VALUES ('$username', '$servicioNombre', '$oferenteId', '$contactoOferente')");
+                                }
+                                }
+                                ?>
+                                <script>alert('SE CONFIRMO SU RESERVA')</script>
+                            <?php    
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

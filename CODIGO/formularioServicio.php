@@ -47,7 +47,7 @@
 						         <input type="file" id="imagen" name="imagen" class="form-control"required><p>
 					        </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Cantidad de reservas disponibles</label>
+                    <label for="exampleInputPassword1" class="form-label">Cantidad de turnos diarios</label>
                     <input type="text" class="form-control" id="cantidadReservas" name="cantidadReservas" required><p>
                   </div>
                   <div class="form-group">

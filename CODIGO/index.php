@@ -9,6 +9,16 @@
 <script src="https://kit.fontawesome.com/a7606874aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+    $consultaFechaHora = new DateTime("now", new DateTimeZone('America/Argentina/Buenos_Aires'));
+    $fechaHoraActual=new DateTime("now", new DateTimeZone('America/Argentina/Buenos_Aires'));
+    $fechaHoraAnterior = $consultaFechaHora->modify('-1 day');
+    echo $fechaHoraAnterior->format('d-m-Y H:i');
+
+    if($fechaHoraAnterior!=$fechaHoraActual){
+        echo "hola";
+    }
+    ?>
        <!-- NAVBAR -->
        <?php include 'NAV-FOOTER/navbar.php';?>
      <!-- Slider -->

@@ -16,18 +16,17 @@
         <div class="row mt-4">
             <!--Grid column-->
             <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4">Sobre Nosotros</h5>
+                <h5 class="text-uppercase mb-4">TRABAJO PRACTICO INTEGRADOR</h5>
 
                 <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                    voluptatum deleniti atque corrupti.
+                    Rebeca Filippa - Facundo Mondino - Tulio Musso
                 </p>
-
                 <p>
-                    Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                    molestias.
+                    Ingeniería De Software 2022 - 4to Año
                 </p>
-
+                <p>
+                    Profesor - Ing. Diego Gandino
+                </p>
 
             </div>
             <!--Grid column-->

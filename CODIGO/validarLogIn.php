@@ -14,7 +14,8 @@ if($filas){
     $_SESSION['username'] = $email;
     header("location:index.php");
 
-}else{
+}
+else{
     include("login.php");
     ?>
 echo '<script>alert("ERROR DE AUTENTIFICACION")</script>';
