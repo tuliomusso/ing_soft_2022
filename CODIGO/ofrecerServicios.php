@@ -40,12 +40,13 @@
       $localidadOferente= $valores["nombreLocalidad"];
     }
   }
+  $mysqli = new mysqli('localhost', 'root', '', 'serviempresa');
+  $SQL=mysqli_query($mysqli,"INSERT INTO disponibilidadoriginal (nombreServicio, reservasServicio) VALUES ('$nombre', '$cantidadReservas')");
   try {
 
     $conexion = new PDO("mysql:host=localhost;port=3306;dbname=serviempresa", "root", "");
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
     $pdo = $conexion->prepare('INSERT INTO servicio(idCategoria, idUsuario, nombre, imagen, cantidadReservas, descripcionContacto, provinciaOferente, departamentoOferente, localidadOferente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $pdo->bindParam(1, $idCategoria);
     $pdo->bindParam(2, $idUsuario);
@@ -57,7 +58,6 @@
     $pdo->bindParam(8, $departamentoOferente);
     $pdo->bindParam(9, $localidadOferente);
     $pdo->execute() or die(print($pdo->errorInfo()));
-
     echo json_encode('true');
 
 } catch(PDOException $error) {

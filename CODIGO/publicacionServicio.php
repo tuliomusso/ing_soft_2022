@@ -19,6 +19,7 @@ $descripcion = $_GET['descripcion'];
 $oferente=$_GET['oferente'];
 $imagen=$_GET['imagen'];
 $idServicio=$_GET['idServicio'];
+$cantidadReservas=$_GET['cantidadReservas'];
 ?> 
 
          <!-- NAVBAR -->
@@ -44,6 +45,7 @@ $idServicio=$_GET['idServicio'];
                                 <h8 class="text">OFRECIDO POR: <u><?php echo $oferente?></u></h8 >
                             </div>
                             <p class="about">DESCRIPCION: <?php echo $descripcion?></p>
+                            <p class="about">TURNOS DISPONIBLES: <?php echo $cantidadReservas?></p>
                             <form method="POST">
                             <input type="submit" class="btn btn-success" name="btn-atc" value="CONFIRMAR SERVICIO">
                             </form>
@@ -64,7 +66,8 @@ $idServicio=$_GET['idServicio'];
                                     $servicioNombre=$valores["nombre"];
                                     $oferenteId=$valores["idUsuario"];
                                     $contactoOferente=$valores["descripcionContacto"];
-                                    $sSQLL=mysqli_query($mysqli,"INSERT INTO reserva (idUsuario, nombreServicio, idOferente, contactoOferente) VALUES ('$username', '$servicioNombre', '$oferenteId', '$contactoOferente')");
+                                    $imagenServicio=$valores["imagen"];
+                                    $sSQLL=mysqli_query($mysqli,"INSERT INTO reserva (idUsuario, nombreServicio, idOferente, contactoOferente, imagenServicio) VALUES ('$username', '$servicioNombre', '$oferenteId', '$contactoOferente', '$imagenServicio')");
                                 }
                                 }
                                 ?>

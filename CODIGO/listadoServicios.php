@@ -78,13 +78,16 @@
                           $imagen = implode(" ",$arrayimagen);
                           $arrayidServicio = array($valores["idServicio"]);  
                           $idServicio = implode(" ",$arrayidServicio);
+                          $arrayCantidadReservas= array($valores["cantidadReservas"]);  
+                          $cantidadReservas = implode(" ",$arrayCantidadReservas);
                           ?>
                           <a href="publicacionServicio.php?categoria=<?php echo $categoriaServicio;?>
                           &nombre=<?php echo $nombreServicio;?>
                           &descripcion=<?php echo $descripcionServicio;?>
                           &oferente=<?php echo $oferenteServicio;?>
                           &imagen=<?php echo $imagen;?>
-                          &idServicio=<?php echo $idServicio;?>" class="btn btn-success"><i class="fas fa-link"></i> VER SERVICIO</a>
+                          &idServicio=<?php echo $idServicio;?>
+                          &cantidadReservas=<?php echo $cantidadReservas;?>" class="btn btn-success"><i class="fas fa-link"></i> VER SERVICIO</a>
                         </div>
                       </div>
                 </div>

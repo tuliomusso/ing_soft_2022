@@ -10,14 +10,20 @@
 </head>
 <body>
     <?php
-    $consultaFechaHora = new DateTime("now", new DateTimeZone('America/Argentina/Buenos_Aires'));
-    $fechaHoraActual=new DateTime("now", new DateTimeZone('America/Argentina/Buenos_Aires'));
-    $fechaHoraAnterior = $consultaFechaHora->modify('-1 day');
-    echo $fechaHoraAnterior->format('d-m-Y H:i');
-
-    if($fechaHoraAnterior!=$fechaHoraActual){
-        echo "hola";
-    }
+     $mysqli = new mysqli('localhost', 'root', '', 'serviempresa');
+     $sql = "SELECT * FROM servicio AS t1 INNER JOIN disponibilidadoriginal AS t2 ON t1.nombre = t2.nombreServicio";        
+     $result = mysqli_query($mysqli, $sql);
+     $cantidadFilas = mysqli_num_rows($result);
+     for($fila=0;$fila<$cantidadFilas;$fila++){
+        $valores = mysqli_fetch_assoc($result);
+        $reservasOriginales=$valores["reservasServicio"];
+        $nombreOriginal=$valores["nombreServicio"];
+        if($valores["cantidadReservas"]==0){
+            
+            $sSQL=mysqli_query($mysqli,"UPDATE servicio SET cantidadReservas='$reservasOriginales' WHERE nombre='$nombreOriginal'");
+        }
+         
+     }
     ?>
        <!-- NAVBAR -->
        <?php include 'NAV-FOOTER/navbar.php';?>

@@ -41,7 +41,7 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Perfil</a>
-                                    <a class="dropdown-item" href="#">Servicios Contratados</a>
+                                    <a class="dropdown-item" href="serviciosContratados.php">Servicios Contratados</a>
                                     <a class="dropdown-item" href="#">Servicios Ofrecidos</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="login.php" title="login">Iniciar Sesion</a>
