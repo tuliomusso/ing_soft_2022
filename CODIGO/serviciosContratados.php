@@ -28,6 +28,7 @@
    for($fila=0;$fila<$cantidadFilas;$fila++){
    $valores = mysqli_fetch_assoc($result);
    if($valores["idUsuario"]==$_SESSION['username']){
+    $idOferente= $valores["idOferente"];
    ?>
     <div class="container mt-5 mb-5">
     <div class="row d-flex justify-content-center">
@@ -43,7 +44,26 @@
                         <div class="product p-4">
                                 <h5 class="text-uppercase"><?php echo $valores["nombreServicio"]?></h5>
                                 <h8 class="text">OFRECIDO POR: <u><?php echo $valores["idOferente"]?></u></h8 >
-                                <h8 class="text">DESCRIPCION: <u><?php echo $valores["contactoOferente"]?></u></h8 >
+                                <h8 class="text">DESCRIPCION: <?php echo $valores["contactoOferente"]?></h8 >
+                                <br>
+                                <br>
+                                <form action= "confirmacionCalificacion.php?idOferente=<?php echo $idOferente;?>" method="POST">
+                                <label>CALIFICAR SERVICIO:</label>
+                                <select name="selectCalificacionParaOferente" id="selectCalificacionParaOferente">
+                                <option value="">Selecciona:</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                                </select>
+                                <button type="submit">CALIFICAR</button>
+                                </form>
                             </div>
                             </div>
                     </div>

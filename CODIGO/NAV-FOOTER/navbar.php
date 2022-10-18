@@ -40,7 +40,7 @@
                                 ?>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Perfil</a>
+                                    <a class="dropdown-item" href="perfilUsuario.php">Perfil</a>
                                     <a class="dropdown-item" href="serviciosContratados.php">Servicios Contratados</a>
                                     <a class="dropdown-item" href="#">Servicios Ofrecidos</a>
                                     <div class="dropdown-divider"></div>
