@@ -71,7 +71,10 @@ $cantidadReservas=$_GET['cantidadReservas'];
                                 }
                                 }
                                 ?>
-                                <script>alert('SE CONFIRMO SU RESERVA')</script>
+                                <script>
+                                alert('SE CONFIRMO SU RESERVA');
+                                window.location="http://localhost/DESARROLLO%20TPI/CODIGO/index.php";
+                                </script>
                             <?php    
                             }
                             ?>

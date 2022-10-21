@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 $conexion=mysqli_connect("localhost","root","","serviempresa");
 $email = $_POST['email'];

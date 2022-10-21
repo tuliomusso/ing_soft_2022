@@ -34,16 +34,39 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="row">
-                    <div class="col-md-6">
+                <div class="col-md-5">
+                        <div class="images p-3">
+                            <div class="text-center p-4"> <img id="main-image" src="https://i.ibb.co/ryGFw2c/LOGO-PERFIL.png" width="150" height="150" alt="imagen error" /> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
                         <div class="product p-4">
                                 <h5 class="text"><u><?php echo $valores["email"]?></u></h5>
-                                <h8 class="text">NOMBRE Y APELLIDO: <?php echo $valores["nombreApellido"]?></h8>
+                                <h8 class="text"><u>NOMBRE Y APELLIDO:</u>&nbsp;<b><?php echo $valores["nombreApellido"]?></b></h8>
                                 <br>
-                                <h8 class="text">DOMICILIO: <?php echo $valores["domicilio"]?></h8>
+                                <h8 class="text"><u>DOMICILIO:</u>&nbsp;<b><?php echo $valores["domicilio"]?></b></h8>
                                 <br>
-                                <h8 class="text">TELEFONO: <?php echo $valores["telefono"]?></h8>
+                                <h8 class="text"><u>TELEFONO:</u>&nbsp;<b><?php echo $valores["telefono"]?></b></h8>
                                 <br>
-                                <h8 class="text">DNI: <?php echo $valores["dni"]?></h8>
+                                <h8 class="text"><u>DNI:</u>&nbsp;<b><?php echo $valores["dni"]?></b></h8>
+                                <br>
+                                <h8 class="text"><u>CALIFICACION COMO OFERENTE:<b></u>&nbsp;<?php
+                                if($valores["cantOperacionesOferente"]!=0){
+                                    echo $valores["calificacionComoOferente"]; echo "/10";
+                                }
+                                else {
+                                    echo "SIN OPERACIONES CONFIRMADAS";
+                                }
+                                ?></b></h8>
+                                <br>
+                                <h8 class="text"><u>CALIFICACION COMO SOLICITANTE:<b></u>&nbsp;<?php
+                                if($valores["cantOperacionesSolicitante"]!=0){
+                                    echo $valores["calificacionComoSolicitante"];; echo "/10";
+                                }
+                                else {
+                                    echo "SIN OPERACIONES CONFIRMADAS";
+                                }
+                                ?></b></h8>
                             </div>
                             </div>
                     </div>

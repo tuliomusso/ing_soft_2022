@@ -18,7 +18,7 @@
    <br>
    <div class="container">
         <div class="d-grid gap-2">
-            <type="button" class="btn btn-info btn-lg btn-block">MIS SERVICIOS CONTRATADOS</type= button>
+            <type="button" class="btn btn-info btn-lg btn-block">MIS SERVICIOS OFRECIDOS</type= button>
         </div>
     </div>
    <?php
@@ -27,9 +27,14 @@
    $cantidadFilas = mysqli_num_rows($result);
    for($fila=0;$fila<$cantidadFilas;$fila++){
    $valores = mysqli_fetch_assoc($result);
-   if($valores["idUsuario"]==$_SESSION['username']){
-    $idOferente= $valores["idOferente"];
-    $nombreServicio=$valores["nombreServicio"]
+   if($valores["idOferente"]==$_SESSION['username']){
+    $idSolicitante= $valores["idUsuario"];
+    $nombreServicio=$valores["nombreServicio"];
+    $ssql = "SELECT * FROM usuario WHERE email='$idSolicitante'"; 
+    $result2 = mysqli_query($mysqli, $ssql);  
+    $valores2 = mysqli_fetch_assoc($result2);
+    $nombreApellidoSolicitante= $valores2["nombreApellido"];
+    $telefonoSolicitante= $valores2["telefono"];
    ?>
     <div class="container mt-5 mb-5">
     <div class="row d-flex justify-content-center">
@@ -44,17 +49,20 @@
                     <div class="col-md-6">
                         <div class="product p-4">
                                 <h5 class="text-uppercase"><?php echo $valores["nombreServicio"]?></h5>
-                                <h8 class="text">OFRECIDO POR: <u><?php echo $valores["idOferente"]?></u></h8 >
-                                <h8 class="text">DESCRIPCION: <?php echo $valores["contactoOferente"]?></h8 >
+                                <h8 class="text">SOLICITADO POR: <u><?php echo $valores["idUsuario"]?></u></h8 >
+                                <br>
+                                <h8 class="text">NOMBRE Y APELLIDO DEL SOLICITANTE: <?php echo $nombreApellidoSolicitante?></h8 >
+                                <br>
+                                <h8 class="text">TELEFONO SOLICITANTE: <?php echo $telefonoSolicitante?></h8 >
                                 <br>
                                 <br>
                                 <?php
-                                if($valores['nombreServicio']==$nombreServicio && $valores["estadoCalificacionSolicitante"]==0){
+                                if($valores['nombreServicio']==$nombreServicio && $valores["estadoCalificacionOferente"]==0){
                                 ?>
-                                <form action= "confirmacionCalificacion.php?idOferente=<?php echo $idOferente;?>
+                                <form action="confirmarCalificacionSolicitante.php?idSolicitante=<?php echo $idSolicitante;?>
                                 &nombreServicio=<?php echo $nombreServicio;?>" method="POST">
-                                <label>CALIFICAR SERVICIO:</label>
-                                <select name="selectCalificacionParaOferente" id="selectCalificacionParaOferente">
+                                <label>CALIFICAR SOLICITANTE:</label>
+                                <select name="selectCalificacionParaSolicitante" id="selectCalificacionParaSolicitante">
                                 <option value="">Selecciona:</option>
                                 <option value=1>1</option>
                                 <option value=2>2</option>
